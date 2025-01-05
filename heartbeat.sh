@@ -20,7 +20,7 @@ do
     date '+%s' >${HEARTBEAT_FILE}
     git add ${HEARTBEAT_FILE}
     git commit -q -m "Heartbeat $(date '+%Y-%m-%d %H:%M:%S')"
-    git push
+    git push -q
 
     SECONDS=$((${MIN_SLEEP} + ${RANDOM} % ${MAX_SLEEP}))
     echo "Sleeping for ${SECONDS} seconds…"
